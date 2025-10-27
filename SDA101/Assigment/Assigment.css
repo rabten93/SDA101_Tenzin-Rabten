@@ -1,0 +1,257 @@
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #1e1e2f;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+}
+
+nav .nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+nav .logo {
+  color: #ff6f61;
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1e1e2f;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background-color: #fff;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-text .highlight {
+  color: #1e1e2f;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Education */
+.education {
+  background-color: #e8f3f9;
+  padding: 60px 80px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.section-header .view-all {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 500;
+}
+
+.edu-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 280px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* Strengths */
+.strengths {
+  padding: 60px 80px;
+}
+
+.strengths h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.strength-item {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.strength-item h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.strength-item .tag {
+  display: inline-block;
+  background-color: #1e1e2f;
+  color: white;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: 600;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-img img {
+    margin-top: 20px;
+  }
+
+  .education, .strengths {
+    padding: 40px 20px;
+  }
+
+  .edu-cards {
+    flex-direction: column;
+  }
+}
+
+/* Extracurricular Activities */
+.extracurricular {
+  padding: 60px 80px;
+  background-color: #fff;
+}
+
+.extracurricular h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1e1e2f;
+  margin-bottom: 40px;
+}
+
+.activity {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.activity-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.activity-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.activity-text p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.activity-img img {
+  width: 260px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.extracurricular hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 40px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .extracurricular {
+    padding: 40px 20px;
+  }
+
+  .activity {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .activity-img img {
+    width: 100%;
+    max-width: 300px;
+}
+}

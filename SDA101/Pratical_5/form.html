@@ -1,0 +1,116 @@
+<form action="/submit-form" method="post">
+  <!-- Form elements go here -->
+</form>
+<!-- The 'action' attribute specifies where to send the form data when submitted -->
+<!-- The 'method' attribute specifies the HTTP method to use (usually "get" or "post") -->
+<form action="/submit-form" method="post">
+  <!-- Form title -->
+  <h2>Registration Form</h2>
+  
+  <!-- Text input for full name -->
+  <!-- The 'for' attribute of <label> should match the 'id' of the input it's associated with -->
+  <label for="fullname">Full Name:</label>
+  <!-- 'required' attribute makes this field mandatory -->
+  <input type="text" id="fullname" name="fullname" required><br><br>
+  
+  <!-- Student ID-->
+  <label for="Student ID">Student ID:</label>
+  <input type="Student ID" id="Student ID" name="Student ID" required><br><br>
+  
+  <!-- Email input -->
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+  
+  <!-- phone Number -->
+  <label for="phone number">phone number:</label>
+  <input type="phone number" id="phone number" name="phone number" required><br><br>
+  <!-- Dropdown menu for Block/Buildling Name -->
+  <label for="Block/Buildling Name">Block/Buildling Name:</label>
+  <select id="Block/Buildling Name" name="Block/Buildling Name">
+    <!-- Each <option> represents a choice in the dropdown -->
+    <option value="Block A">Block A</option>
+    <option value="Block B">Block B</option>
+    <option value="Block C">Block C</option>
+    <option value="Block F">Block F</option>
+    <option value="RK A">RK A</option>
+    <option value="RK B">RK B</option>
+  </select><br><br>
+  <!-- Room Number -->
+  <label for="room">Room Number:</label>
+  <input
+    type="number"
+    id="room"
+    name="room"
+    min="100"
+    max="999"
+    placeholder="Room number (e.g., 205)"
+    required
+  />
+
+  <!-- Floor Number -->
+  <label for="floor">Floor Number:</label>
+  <input
+    type="number"
+    id="floor"
+    name="floor"
+    min="1"
+    max="10"
+    placeholder="Floor number"
+    required
+  />
+
+  <!-- Dropdown menu for Type of Issue -->
+  <label for="Type of Issue">Type of Issue:</label>
+  <select id="Type of Issue" name="Type of Issue">
+    <!-- Each <option> represents a choice in the dropdown -->
+    <option value="Electrical">Electrical</option>
+    <option value="Plumbing">Plumbing</option>
+    <option value="Furniture">Furniture</option>
+    <option value="Infrastructure">Infrastructure</option>
+    <option value="Cleaning">Cleaning</option>
+    <option value="Other">Other</option>
+  </select><br><br>
+  <!-- Checkboxes for Issue Priority/Urgency -->
+  <p>Issue Priority/Urgency :</p>
+  <!-- Checkboxes allow multiple selections -->
+  <input type="checkbox" id="Emergency (Immediate attention required)" name="interests" value="Emergency (Immediate attention required)">
+  <label for="Emergency (Immediate attention required)">Emergency (Immediate attention required)</label><br>
+  <input type="checkbox" id="High (Within 24 hours)" name="interests" value="High (Within 24 hours)">
+  <label for="High (Within 24 hours)">High (Within 24 hours)</label><br>
+  <input type="checkbox" id="Medium (Within 3 days)" name="interests" value="Medium (Within 3 days)">
+  <label for="Medium (Within 3 days)">Medium (Within 3 days)</label><br>
+  <input type="checkbox" id="Low (Within a week)" name="interests" value="Low (Within a week)">
+  <label for="Low (Within a week)">Low (Within a week)</label><br><br>
+  
+
+  <!-- Issue Description -->
+  <label for="issue">Issue Description:</label><br />
+  <textarea
+    id="issue"
+    name="issue"
+    rows="5"
+    cols="50"
+    placeholder="Please describe the issue in detail..."
+    required
+    oninput="updateWordCount()"
+  ></textarea>
+  <div id="wordCount">Words: 0</div>
+
+  <!-- Submit Button -->
+  <button type="submit" onclick="return validateIssue()">Submit</button>
+</form>
+
+<script>
+  function updateWordCount() {
+    const text = document.getElementById("issue").value.trim();
+    const words = text === "" ? 0 : text.split(/\s+/).length;
+    document.getElementById("wordCount").textContent = `Words: ${words}`;
+  }
+
+  function validateIssue() {
+    const text = document
+  
+  
+  <!-- Submit Button -->
+  <button type="submit">Submit</button>
+</form>

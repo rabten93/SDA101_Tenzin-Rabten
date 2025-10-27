@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* You'll add your Flexbox and Grid styles below */
+/* Task 1: Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #434343;
+}
+
+/* Task 2: Navigation Bar with Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #323232;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-social a {
+    color: rgb(214, 211, 211);
+    text-decoration: none;
+}
+
+/* Task 3: Main Layout with Grid */
+.page-container {
+    display: grid;
+    grid-template-areas:
+        "hero"
+        "about"
+        "skills"
+        "portfolio";
+    grid-template-rows: auto;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    grid-area: hero;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f0f0f0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: rgb(242, 240, 240);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.about {
+    grid-area: about;
+    padding: 2rem;
+    background: #f0eded;
+}
+
+.skills {
+    grid-area: skills;
+    padding: 2rem;
+    background: #f9f9f9;
+}
+
+.portfolio {
+    grid-area: portfolio;
+    padding: 2rem;
+    background: #fff;
+}
+
+/* Task 4: Skills Cards with Flexbox */
+.skill-card {
+    flex: 1 1 250px; /* Grow and shrink, minimum width 250px */
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    display: flex; /* Make content centered vertically if needed */
+    flex-direction: column;
+    justify-content: center;
+}
+/* Task 5: Portfolio Gallery with Grid */
+.gallery {
+    display: grid; /* Make this a grid container */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Add gaps between projects */
+}
+
+.project {
+    background: rgb(178, 137, 137);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(11, 9, 9, 0.1);
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project img {
+    width: 100%;
+    height: auto; /* Ensure images scale properly */
+    border-radius: 4px;
+    object-fit: cover;
+}
+/* Task 6: Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,221 @@
+
+:root{
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #1e90ff;
+  --radius: 16px;
+  --max-width: 1100px;
+  --gap: 28px;
+  --panel-width: 420px; /* used as reference for large screens */
+  --page-padding: 20px;
+  --shadow: 0 8px 24px rgba(16,24,40,0.08);
+  --glass: rgba(255,255,255,0.85);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.35;
+  padding: 24px;
+}
+
+/* Page centering */
+.page{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:calc(100vh - 64px);
+  gap:var(--gap);
+}
+
+/* Card layout */
+.card{
+  width:100%;
+  max-width:var(--max-width);
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:var(--gap);
+  align-items:stretch;
+}
+
+/* Make card stack on small screens */
+@media (max-width: 880px){
+  .card{
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
+/* Left hero area using the supplied image */
+.hero{
+  border-radius: var(--radius);
+  overflow:hidden;
+  background-color:#ddd;
+  background-image: url("Image40 (1).avif");
+  background-size: cover;
+  background-position: center;
+  min-height: 420px;
+  box-shadow: var(--shadow);
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+}
+
+/* optional gradient overlay to improve text readability */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.35) 60%);
+  display:flex;
+  align-items:flex-end;
+  padding:28px;
+}
+
+/* small badge on the hero */
+.hero-badge{
+  background: var(--glass);
+  backdrop-filter: blur(6px);
+  padding:16px;
+  border-radius:12px;
+  max-width:320px;
+  box-shadow: 0 6px 18px rgba(4,6,15,0.06);
+}
+.hero-badge h3{
+  margin:0 0 6px 0;
+  font-size:18px;
+  font-weight:700;
+}
+.hero-badge p{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Right-side panel */
+.panel{
+  background:var(--card-bg);
+  border-radius: var(--radius);
+  padding:28px;
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  min-height: 420px;
+}
+
+/* Header */
+.panel-header .title{
+  margin:0;
+  font-size:28px;
+  line-height:1.05;
+  letter-spacing:-0.02em;
+}
+.subtitle{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Features list */
+.features{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:6px;
+}
+.feature{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.feature-icon{
+  min-width:52px;
+  min-height:52px;
+  border-radius:10px;
+  background: linear-gradient(180deg, rgba(30,144,255,0.12), rgba(30,144,255,0.06));
+  color: var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:18px;
+  box-shadow: 0 4px 12px rgba(30,144,255,0.04);
+}
+.feature-body h4{
+  margin:0 0 6px 0;
+  font-size:16px;
+}
+.feature-body p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* CTA row aligned to bottom on large screens */
+.cta-row{
+  margin-top:auto;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
+  border:1px solid transparent;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn.primary{
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 8px 20px rgba(30,144,255,0.12);
+}
+.btn.primary:hover{
+  box-shadow: 0 12px 28px rgba(30,144,255,0.16);
+  filter:brightness(.98);
+}
+.btn.secondary{
+  background: transparent;
+  color: #071033;
+  border-color: #e6e9ef;
+}
+
+/* Footer small */
+.footer{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:14px;
+  font-size:12px;
+  color:var(--muted);
+  background:transparent;
+  padding:4px 8px;
+}
+
+/* Small-screen adjustments */
+@media (max-width: 520px){
+  :root{ --page-padding: 12px; }
+  body{ padding:12px; }
+  .hero{ min-height:300px; }
+  .panel{ padding:18px; }
+  .panel-header .title{ font-size:22px; }
+  .feature-icon{ min-width:44px; min-height:44px; font-size:16px; }
+  .card{ gap:18px; }
+}
